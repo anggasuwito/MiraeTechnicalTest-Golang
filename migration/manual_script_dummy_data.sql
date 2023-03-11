@@ -4,20 +4,26 @@ INSERT INTO employees (employee_id,first_name,last_name,title,work_phone) VALUES
 
 INSERT INTO shipping_methods (shipping_method_id,shipping_method) VALUES (1,'JNE');
 
-INSERT INTO orders (order_id,customer_id,employee_id,order_date,purchase_order_number,ship_date,shipping_method_id,freight_charge,taxes,payment_received,comment) VALUES
-    (1,1,1,now(),1,now(),1,10,50,'1','payed');
+INSERT INTO orders (order_id,customer_id,employee_id,order_date,purchase_order_number,ship_date,shipping_method_id,freight_charge,taxes,payment_received,comment)
+VALUES
+(1,1,1,now(),1,now(),1,10,50,'1','payed'),
+(2,1,1,now(),1,now(),1,10,50,'1','payed'),
+(3,1,1,now(),1,now(),1,10,50,'1','payed'),
+(4,1,1,now(),1,now(),1,10,50,'1','payed');
 
 INSERT INTO products (product_id,product_name,unit_price,in_stock)
 VALUES
-(1,'Product A',1000,'1'),
-(2,'Product B',2000,'1');
+    (1,'Product A',1000,'1'),
+    (2,'Product B',2000,'1');
 
 
 INSERT INTO order_details (order_detail_id,order_id,product_id,quantity,unit_price,discount)
 VALUES
-(1,1,1,5,1000,0),
-(2,1,1,6,2000,0),
-(3,1,2,7,3000,0),
-(4,1,2,8,4000,0),
-(5,1,2,9,5000,0);
-
+    (1,1,1,5,1000,10),
+    (2,1,1,6,2000,10),
+    (3,2,2,7,3000,10),
+    (4,2,2,8,4000,10),
+    (5,3,2,9,5000,10),
+    (6,3,2,9,5000,10),
+    (7,4,2,9,5000,10),
+    (8,4,2,9,5000,10);

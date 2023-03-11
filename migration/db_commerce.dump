@@ -100,7 +100,7 @@ CREATE TABLE `order_details` (
   KEY `product_id` (`product_id`),
   CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
   CONSTRAINT `order_details_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +109,7 @@ CREATE TABLE `order_details` (
 
 LOCK TABLES `order_details` WRITE;
 /*!40000 ALTER TABLE `order_details` DISABLE KEYS */;
-INSERT INTO `order_details` VALUES (1,1,1,5,1000,0),(2,1,1,6,2000,0),(3,1,2,7,3000,0),(4,1,2,8,4000,0),(5,1,2,9,5000,0);
+INSERT INTO `order_details` VALUES (1,1,1,5,1000,10),(2,1,1,6,2000,10),(3,2,2,7,3000,10),(4,2,2,8,4000,10),(5,3,2,9,5000,10),(6,3,2,9,5000,10),(7,4,2,9,5000,10),(8,4,2,9,5000,10);
 /*!40000 ALTER TABLE `order_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +139,7 @@ CREATE TABLE `orders` (
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`),
   CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`),
   CONSTRAINT `orders_ibfk_3` FOREIGN KEY (`shipping_method_id`) REFERENCES `shipping_methods` (`shipping_method_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +148,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,1,'2023-03-11','1','2023-03-11',1,10,50,'1','payed');
+INSERT INTO `orders` VALUES (1,1,1,'2023-03-11','1','2023-03-11',1,10,50,'1','payed'),(2,1,1,'2023-03-11','1','2023-03-11',1,10,50,'1','payed'),(3,1,1,'2023-03-11','1','2023-03-11',1,10,50,'1','payed'),(4,1,1,'2023-03-11','1','2023-03-11',1,10,50,'1','payed');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,6 +201,10 @@ LOCK TABLES `shipping_methods` WRITE;
 INSERT INTO `shipping_methods` VALUES (1,'JNE');
 /*!40000 ALTER TABLE `shipping_methods` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'db_commerce'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -211,4 +215,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-11 12:36:27
+-- Dump completed on 2023-03-11 15:19:49

@@ -11,6 +11,7 @@ type OrderRepo struct {
 
 type OrderRepoInterface interface {
 	GetAllOrderRepo(offset int, limit int) (res []models.OrderResponse, err error)
+	GetAllOrderDetailsRepo(orderID int) (res []models.OrderDetailsResponse, err error)
 	CountTotalOrderRepo() (total int, err error)
 }
 

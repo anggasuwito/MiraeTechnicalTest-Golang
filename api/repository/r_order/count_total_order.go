@@ -5,7 +5,7 @@ func (r OrderRepo) CountTotalOrderRepo() (total int, err error) {
 		QueryRow(`
 		SELECT 
 		    COUNT(*) 
-		FROM order_details
+		FROM orders
 		`).
 		Scan(&total)
 	if err != nil {

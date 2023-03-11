@@ -29,24 +29,29 @@ type OrderDetails struct {
 }
 
 type OrderResponse struct {
+	OrderID             int                    `json:"order_id"`
+	OrderDate           string                 `json:"order_date"`
+	PurchaseOrderNumber string                 `json:"purchase_order_number"`
+	ShipDate            string                 `json:"ship_date"`
+	FreightCharge       int                    `json:"freight_charge"`
+	Taxes               int                    `json:"taxes"`
+	PaymentReceived     string                 `json:"payment_received"`
+	Comment             string                 `json:"comment"`
+	TotalPrice          int                    `json:"total_price"`
+	FinalTotalPrice     int                    `json:"final_total_price"`
+	ShippingMethod      ShippingMethod         `json:"shipping_method"`
+	Employee            Employee               `json:"employee"`
+	Customer            Customer               `json:"customer"`
+	Details             []OrderDetailsResponse `json:"details"`
+}
+
+type OrderDetailsResponse struct {
 	OrderDetailID int     `json:"order_detail_id"`
 	Quantity      int     `json:"quantity"`
 	UnitPrice     int     `json:"unit_price"`
 	Discount      int     `json:"discount"`
+	Price         int     `json:"price"`
 	Product       Product `json:"product"`
-	Order         struct {
-		OrderID             int            `json:"order_id"`
-		OrderDate           string         `json:"order_date"`
-		PurchaseOrderNumber string         `json:"purchase_order_number"`
-		ShipDate            string         `json:"ship_date"`
-		FreightCharge       int            `json:"freight_charge"`
-		Taxes               int            `json:"taxes"`
-		PaymentReceived     string         `json:"payment_received"`
-		Comment             string         `json:"comment"`
-		ShippingMethod      ShippingMethod `json:"shipping_method"`
-		Employee            Employee       `json:"employee"`
-		Customer            Customer       `json:"customer"`
-	} `json:"order"`
 }
 
 // example method function
